@@ -73,10 +73,10 @@ def cutWords(raw_words):
 
 @app.route("/cutwords",methods=['POST'])
 def cutwords():
-    raw_words = request.values['raw_words']
-    data = cutWords(raw_words)
-    # my_fs.appendtext('output.txt',str(entity),'UTF-8')
-    return data
+    print('cutwords beginning.')
+    rawDatas = request.get_json()
+    data = cutWords(rawDatas['raw_words'])
+    return {'data':data}
 
 if __name__ == "__main__":
     app.run()
