@@ -6,3 +6,6 @@ log/
 
 # Ignoring git and cache folders
 .git
+
+# Ignoring model
+data/*
