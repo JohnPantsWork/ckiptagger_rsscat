@@ -137,3 +137,6 @@ dist
 
 # key
 *.key
+
+# data
+data/
