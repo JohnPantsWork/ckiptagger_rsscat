@@ -10,10 +10,10 @@ from ckiptagger import data_utils, construct_dictionary, WS, POS, NER
 # from fs import open_fs
 # my_fs = open_fs('.')
 
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
-def cutWords(raw_words):
+async def cutWords(raw_words):
     # Download data
     # data_utils.download_data("./")
 
@@ -72,11 +72,11 @@ def cutWords(raw_words):
     # my_fs.close()
 
 @app.route("/cutwords",methods=['POST'])
-def cutwords():
+async def cutwords():
     print('cutwords beginning.')
     rawDatas = request.get_json()
-    data = cutWords(rawDatas['raw_words'])
-    return {'data':data}
+    data = await cutWords(rawDatas['raw_words'])
+    return {'data':rawDatas}
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
