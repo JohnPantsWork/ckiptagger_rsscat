@@ -13,4 +13,4 @@ RUN pip3 install fs
 
 WORKDIR /ckiptagger_rsscat
 
-CMD ["python3","./server/server.py"]
+CMD ["python3","-u","./server/server.py"]
