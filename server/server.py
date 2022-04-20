@@ -51,6 +51,7 @@ async def cutWords(raw_words):
     del pos
     #del ner
 
+    str word_pos_pairs_s
     # Show results
     def print_word_pos_sentence(word_sentence, pos_sentence):
         assert len(word_sentence) == len(pos_sentence)
