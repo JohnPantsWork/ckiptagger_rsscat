@@ -38,6 +38,11 @@ async def cutWordsAll(raw_words):
             ner_words += f"{entity},"
     return {'pos':pos_result ,'ner':ner_words}
 
+@app.route("/",methods=['GET'])
+async def check():
+    print('python print: health check')
+    return 'health check'
+
 @app.route("/cutWords",methods=['POST'])
 async def cutWords():
     print('cut beginning.')
