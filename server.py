@@ -71,6 +71,12 @@ def cutWords(raw_words):
     # return
     # my_fs.close()
 
+@app.route("/",methods=['GET'])
+async def check():
+    print('python print: health check')
+    return 'health check'
+
+
 @app.route("/cutwords",methods=['POST'])
 def cutwords():
     print('cutwords beginning.')
