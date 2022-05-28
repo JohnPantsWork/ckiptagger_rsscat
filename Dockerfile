@@ -11,6 +11,8 @@ RUN pip3 install Flask
 RUN pip3 install Flask[async]
 RUN pip3 install fs
 
+COPY . /ckiptagger_rsscat
 WORKDIR /ckiptagger_rsscat
+EXPOSE 5000
 
-CMD ["python3","-u","./server/server.py"]
+CMD ["python3","-u","server.py"]
