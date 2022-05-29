@@ -10,9 +10,9 @@ from ckiptagger import data_utils, construct_dictionary, WS, POS, NER
 from flask import Flask, request
 app = Flask(__name__)
 
-ws = WS("./data")
-pos = POS("./data")
-ner = NER("./data")
+ws = WS("data")
+pos = POS("data")
+ner = NER("data")
 
 async def cutWordsAll(raw_words):
 
@@ -24,11 +24,10 @@ async def cutWordsAll(raw_words):
 
     # Show results
     def print_word_pos_sentence(word_sentence, pos_sentence):
-        result = 'pos'
+        result = ''
         assert len(word_sentence) == len(pos_sentence)
         for word, pos in zip(word_sentence, pos_sentence):
             result += f"{word}({pos}),"
-        result += ''
         return result
 
     for i, sentence in enumerate(sentence_list):
